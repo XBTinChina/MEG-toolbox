@@ -3,7 +3,7 @@ function POW_data = TX_induced_power( data_set,time,freq_rang,window_length,chan
 %time: a vector of time points
 %trial: trial number
 
-baseline = 101:150 ;  % for modulation
+baseline = 121:170 ;  % for modulation
 
 
 trl_num = trial;
@@ -27,11 +27,11 @@ if exist('base') == 1
     pow_temp = squeeze(mean(pow_temp(1:trl_num,:,:,:)));
     base_temp = repmat(mean(squeeze(pow_temp(:,:,baseline)),3),[1 1 length(time)]);
     pow_temp(:,:,:) = 10*log10(squeeze(pow_temp(:,:,:))./base_temp);
-    POW_data = TX_mat2ft_data(pow_temp,'chan_freq_time',1,200,freq_rang);
+    POW_data = TX_mat2ft_data(pow_temp,'chan_freq_time',1,100,freq_rang);
 else
     pow_temp = POW_data.powspctrm;
     pow_temp = squeeze(mean(pow_temp(1:trl_num,:,:,:)));
-    POW_data = TX_mat2ft_data(pow_temp,'chan_freq_time',1,200,freq_rang); %
+    POW_data = TX_mat2ft_data(pow_temp,'chan_freq_time',1,100,freq_rang); %
     %     wrong
 end
 
