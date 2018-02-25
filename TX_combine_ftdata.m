@@ -27,14 +27,14 @@ for n = 2:num_cell
         
         ft_cell{1}.time = [ft_cell{1}.time ft_cell{n}.time];
         ft_cell{1}.trial = [ft_cell{1}.trial ft_cell{n}.trial];
-        ft_cell{1}.sampleinfo = cat(1,ft_cell{1}.sampleinfo,ft_cell{n}.sampleinfo );
+%        ft_cell{1}.sampleinfo = cat(1,ft_cell{1}.sampleinfo,ft_cell{n}.sampleinfo );
         
     end
     
 end
 
 combine = ft_cell{1};
-sampleinfo = ft_cell{1}.sampleinfo;
+%sampleinfo = ft_cell{1}.sampleinfo;
 
 end
 
