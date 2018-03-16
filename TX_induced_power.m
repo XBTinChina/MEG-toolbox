@@ -3,7 +3,7 @@ function POW_data = TX_induced_power( data_set,time,freq_rang,window_length,chan
 %time: a vector of time points
 %trial: trial number
 
-baseline = 121:170 ;  % for modulation
+baseline = 131:170 ;  % for modulation
 
 
 trl_num = trial;
