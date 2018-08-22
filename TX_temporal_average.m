@@ -1,4 +1,4 @@
-function [ AVG ] = TX_temporal_average( data_set,trial,lp_freq,time_range )
+function [ AVG ] = TX_temporal_average( data_set,trial,time_range )
 %[ AVG ] = TX_temporal_average( data_set,trial,lp_freq,time_range )
 %   Detailed explanation goes here
 
@@ -16,7 +16,7 @@ cfg = [];
 
 cfg.detrend    = 'no';
 cfg.demean = 'yes';
-cfg.baselinewindow  = [-0.2 0];
+cfg.baselinewindow  = [-3 8];
 
 temp  = ft_preprocessing(cfg,data_set);
 

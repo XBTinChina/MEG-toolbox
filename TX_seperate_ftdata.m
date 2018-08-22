@@ -20,7 +20,7 @@ for n = 1:num_cell
 %         difference = 5000000
 %     end
     
-    ft_cell{n}.sampleinfo = combine.sampleinfo(matrix(n)+1:matrix(n+1),:) ;
+    %ft_cell{n}.sampleinfo = combine.sampleinfo(matrix(n)+1:matrix(n+1),:) ;
     
 end
 

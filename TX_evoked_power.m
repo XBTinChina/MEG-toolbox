@@ -1,9 +1,9 @@
-function [POW_data ] = TX_evoked_power( AVG,time,freq_range,window_length,base  )
+function [POW_data ] = TX_evoked_power( AVG,time,freq_range,window_length,baseline,base)
 %[PAVG ] = untitled10( AVG,time )
 %Detailed explanation goes here
 
 
-baseline = 30:69 ;  % if onset is 100.
+%baseline = 30:69 ;  % if onset is 100.
 
 
 cfg = [];
