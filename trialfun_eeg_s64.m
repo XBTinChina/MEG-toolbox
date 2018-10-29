@@ -1,4 +1,4 @@
-function [trl, event] = trialfun_eeg_s8(cfg)
+function [trl, event] = trialfun_eeg_s32(cfg)
 
 %% the first part is common to all trial functions
 % read the header (needed for the samping rate) and the events
@@ -15,7 +15,7 @@ EVvalue    = {event.value}';
 % select the target stimuli
 
 
-stim_sound = find(strcmp('S  8', EVvalue)==1);
+stim_sound = find(strcmp('S 64', EVvalue)==1);
 
 
 % % for each word find the condition

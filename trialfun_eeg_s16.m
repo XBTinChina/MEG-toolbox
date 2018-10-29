@@ -28,8 +28,8 @@ stim_sound = find(strcmp('S 16', EVvalue)==1);
 %   end
 % end
 
-PreTrig   = round(3 * hdr.Fs);
-PostTrig  = round(8 * hdr.Fs);
+PreTrig   = round(2 * hdr.Fs);
+PostTrig  = round(4 * hdr.Fs);
 
 begsample = EVsample(stim_sound) - PreTrig;
 endsample = EVsample(stim_sound) + PostTrig;
