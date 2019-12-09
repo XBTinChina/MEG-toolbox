@@ -40,7 +40,7 @@ elseif length(size(matrix )) == 2 && min(size(matrix)) > 1 && strcmp(format, 'fr
 elseif strcmp(format, 'chan_time' ) && length(size(matrix )) == 3
     for i = 1 : size(matrix,3)
         ft_data.trial{i} = matrix(:,:,i);
-        ft_data.time{i} = (1:size(matrix,2))/fs - start;
+        ft_data.time{i} = (0:(size(matrix,2)-1))/fs - start;
         ft_data.fsample = fs;
         sam1 = (1:2:size(matrix,3)*2);
         sam2 = sam1 + size(matrix,3);

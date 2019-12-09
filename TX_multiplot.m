@@ -6,7 +6,7 @@ function [ ] = TX_multiplot( data_set,method,xlimm,ylimm,zlimm,interactive,highl
 load layout
 cfg = [];
 %cfg.marker = 'off';
-cfg.markersize = 0.5;
+cfg.markersize = 1;
 cfg.comment = 'no';
 
 if exist('highlight')
