@@ -7,7 +7,7 @@ function [POW_data ] = TX_evoked_power( AVG,time,freq_range,window_length,baseli
 
 
 cfg = [];
-cfg.channel    = 'MEG';
+cfg.channel    = 1:10;
 cfg.method     = 'wavelet';
 cfg.width      = window_length;
 cfg.output     = 'pow';

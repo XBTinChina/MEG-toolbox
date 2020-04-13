@@ -16,8 +16,8 @@ if floor(length(channel)/10) < length(channel)/10
     cha{i+1} = channel((i*10 + 1 ):end);
 end
 
-freq = 1:1:50;
-
+freq = 1:45;
+window_length = [linspace(2,20,45)];
 
 jitter = length(shuffle_timerange) - shuffle_timelength;
 
@@ -34,7 +34,7 @@ for i = 1:length(cha)
     cfg.keeptrials = 'yes';
     cfg.channel    = cha{i};
     cfg.method     = 'wavelet';
-    cfg.width      = [linspace(1.5,7,20) linspace(7,15,30)];
+    cfg.width      = window_length;
     cfg.output     = 'fourier';
     cfg.foi        = freq;
     cfg.toi        = shuffle_timerange;
@@ -45,15 +45,17 @@ for i = 1:length(cha)
     trial_num = size(temp_data,1);
     if trial > trial_num
         error('not enough trials')
+    elseif trial < trial_num
+        temp_data = temp_data(1:trial,:,:,:);
     end
     
-    temp_data = temp_data(1:trial,:,:,:);
-    
-    
+    waveletData = cell(1,trial);
     
     for t = 1:trial
         waveletData{t} = squeeze(unwrap(angle(temp_data(t,1:length(cha{i}),:,:))));
     end
+    
+   
     
     clear temp_data
     

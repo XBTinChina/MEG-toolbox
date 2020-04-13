@@ -16,7 +16,7 @@ cfg = [];
 
 cfg.detrend    = 'no';
 cfg.demean = 'yes';
-cfg.baselinewindow  = [-3 8];
+cfg.baselinewindow  = [-1 0];
 
 temp  = ft_preprocessing(cfg,data_set);
 
